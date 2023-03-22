@@ -3,7 +3,7 @@ import data from '../data/data.json';
 import friends from '../data/friends.json';
 import Profile from './Profile/Profile';
 import Statistics from './Statistics/Statistics';
-import FriendsList from './FriendsList/FriendsList';
+import FriendsList from '../components/Friends/FriendsList';
 export const App = () => {
   return (
     <div>
@@ -19,7 +19,9 @@ export const App = () => {
         stats={data} />
       <Statistics
         stats={data} />
-      <FriendsList friends={friends} />;
+      <FriendsList
+        friends={friends} />;
+      {/* <TransactionsHistory items={transactions} /> */}
     </div>
   );
 };

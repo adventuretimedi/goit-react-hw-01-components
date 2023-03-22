@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import { useSyncExternalStore } from 'react';
 
 const GetFriendItem = ({ avatar, name, isOnline }) => {
   return (
