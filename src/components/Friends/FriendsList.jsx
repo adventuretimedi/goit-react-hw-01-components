@@ -1,9 +1,12 @@
 import PropTypes from 'prop-types';
+// import friends from './friends.json';
 import GetFriendItem from './FriendItem';
+import { ListItem } from './Friends.styled';
 
 const FriendsList = ({ friends }) => {
+  // console.log(friends)
   return (
-    <ul className="friends-list">
+    <ListItem>
       {friends.map(friend => (
         <GetFriendItem
           key={friend.id}
@@ -12,17 +15,15 @@ const FriendsList = ({ friends }) => {
           isOnline={friend.isOnline}
         />
       ))}
-    </ul>
+    </ListItem>
   );
 };
 
 FriendsList.propTypes = {
-  friends: PropTypes.objectOf({
-    id: PropTypes.number.isRequired,
-    avatar: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    isOnline: PropTypes.string
-  })
-}
+  friends: PropTypes.array,
+  id: PropTypes.number,
+  avatar: PropTypes.string,
+  name: PropTypes.string,
+  isOnline: PropTypes.string,
+};
 export default FriendsList;
-

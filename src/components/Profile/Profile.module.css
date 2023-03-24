@@ -1,0 +1,46 @@
+.profile {
+  display: block;
+  margin-right: auto;
+  margin-top: 50px;
+  margin-left: 50px;
+  /* padding: 0 15px; */
+  width: 500px;
+}
+
+.description {
+  margin: 0;
+  background-color: #e4f4ff;
+  text-align: center;
+  width: 500px;
+  height: 350px;
+  padding: 15px;
+}
+.name {
+  font-weight: 700;
+  font-size: 25px;
+}
+.avatarr {
+  width: 200px;
+  height: 200px;
+}
+
+.stats {
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin: 0;
+  width: 500px;
+  background-color: #e4f4ff;
+}
+
+.statisticsItem {
+  display: flex;
+  padding-left: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: calc(600px / 2);
+  height: 100px;
+}

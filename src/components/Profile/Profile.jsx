@@ -1,32 +1,28 @@
-// import user from "./data/user.json";
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
+import s from './Profile.module.css';
 
 const Profile = ({ username, tag, location, avatar, stats }) => {
   return (
-    <div className="profile">
-      <div className="description">
-        <img
-          src={avatar}
-          alt="User avatar"
-          className="avatar"
-        />
-        <p className="name">{username}</p>
-        <p className="tag">@{tag}</p>
-        <p className="location">{location}</p>
+    <div className={s.profile}>
+      <div className={s.description}>
+        <img src={avatar} alt="User avatar" className={s.avatarr} />
+        <p className={s.name}>{username}</p>
+        <p className={s.tag}>@{tag}</p>
+        <p className={s.location}>{location}</p>
       </div>
 
-      <ul className="stats">
-        <li>
-          {/* <span className="label">Followers</span> */}
-          <span class="quantity">1000</span>
+      <ul className={s.stats}>
+        <li className={s.statisticsItem}>
+          <span className={s.label}>Followers</span>
+          <span className={s.quantity}>{stats.followers}</span>
         </li>
-        <li>
-          <span class="label">Views</span>
-          <span class="quantity">2000</span>
+        <li className={s.statisticsItem}>
+          <span className={s.label}>Views</span>
+          <span className={s.quantity}>{stats.views}</span>
         </li>
-        <li>
-          <span class="label">Likes</span>
-          <span class="quantity">3000</span>
+        <li className={s.statisticsItem}>
+          <span className={s.label}>Likes</span>
+          <span className={s.quantity}>{stats.likes}</span>
         </li>
       </ul>
     </div>
@@ -37,7 +33,7 @@ Profile.propTypes = {
   tag: PropTypes.string,
   location: PropTypes.string,
   avatar: PropTypes.string,
-  // stats
-}
+  stats: PropTypes.objectOf(PropTypes.number),
+};
 
 export default Profile;

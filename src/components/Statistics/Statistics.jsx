@@ -1,22 +1,24 @@
 import PropTypes from 'prop-types';
 import GetStatisticsItem from './StatisticsItem';
+import s from './Statistics.module.css';
 
 const Statistics = ({ title, stats }) => {
   return (
     <div>
-      <section className="statistics">
+      <section className={s.statistics}>
         <h2 className={`title${title ? 'title--active' : ''}`}>{title}</h2>
 
-        <ul className="stats-list">
+        <ul className={s.statsList}>
           {stats.map(({ id, label, percentage }) => {
             return (
-                <GetStatisticsItem
-                    key={id}
-                    label={label}
-                    percentage={percentage}
-                />
+              <GetStatisticsItem
+                key={id}
+                label={label}
+                percentage={percentage}
+              />
             );
           })}
+          ;
         </ul>
       </section>
     </div>
@@ -24,8 +26,8 @@ const Statistics = ({ title, stats }) => {
 };
 
 Statistics.propTypes = {
-    stats: PropTypes.string.isRequired,
-    title: PropTypes.string,
-}
+  stats: PropTypes.array,
+  title: PropTypes.string,
+};
 
 export default Statistics;
